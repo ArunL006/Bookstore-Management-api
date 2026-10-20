@@ -1,0 +1,18 @@
+{
+  "info": {
+    "name": "Bookstore Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {"key":"base_url","value":"http://127.0.0.1:8000"},
+    {"key":"access_token","value":""},
+    {"key":"book_id","value":"1"}
+  ],
+  "item": [
+    {"name":"List books","request":{"method":"GET","url":"{{base_url}}/api/books/"}},
+    {"name":"Search books","request":{"method":"GET","url":"{{base_url}}/api/books/?search=django"}},
+    {"name":"Register customer","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"url":"{{base_url}}/api/register/","body":{"mode":"raw","raw":"{\n  \"name\": \"Asha Rao\",\n  \"email\": \"asha@example.com\",\n  \"username\": \"asha\",\n  \"password\": \"Use-A-Strong-Password-123\"\n}"}}},
+    {"name":"Login","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"url":"{{base_url}}/api/login/","body":{"mode":"raw","raw":"{\n  \"email\": \"asha@example.com\",\n  \"password\": \"Use-A-Strong-Password-123\"\n}"}}},
+    {"name":"Place order","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{access_token}}"},{"key":"Content-Type","value":"application/json"}],"url":"{{base_url}}/api/orders/","body":{"mode":"raw","raw":"{\n  \"items\": [{\"book_id\": 1, \"quantity\": 1}]\n}"}}}
+  ]
+}
