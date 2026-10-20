@@ -87,3 +87,5 @@ python manage.py test
 
 ## Before deployment
 Replace the development secret, set `DJANGO_DEBUG=False`, configure allowed hosts and HTTPS, and use PostgreSQL for production concurrency. SQLite is used here for easy local setup and does not provide effective row-level locking for concurrent inventory transactions.
+# Bookstore-Management-api
+Bookstore Management REST API built with Django REST Framework and JWT authentication
